@@ -6,10 +6,16 @@ class TennisScorer # rubocop:disable Style/FrozenStringLiteralComment
   end
 
   def won_point
-    @score = 'Fifteen'
+    case @score
+    when 'Love' then @score = 'Fifteen'
+    when 'Fifteen' then @score = 'Thirty'
+    when 'Thirty' then @score = 'Forty'
+    end
+   
   end
+  # returns score
 
-  def score #returns score
+  def score
     "#{@score}-Love"
   end
 end

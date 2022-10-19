@@ -1,11 +1,14 @@
 require './lib/tennis'
 
-def expect_score_to_eq(expected_score)
-  expect(tennis_scorer.score).to eq(expected_score)
-end
+
 
 describe 'Tennis Scorer' do
   let(:tennis_scorer) { TennisScorer.new}
+
+  def expect_score_to_eq(expected_score)
+    expect(tennis_scorer.score).to eq(expected_score)
+  end
+  
   it 'can score a new game where no player has score yet' do
     expect_score_to_eq('Love-Love')
   end
